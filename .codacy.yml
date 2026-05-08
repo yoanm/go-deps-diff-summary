@@ -1,0 +1,18 @@
+engines:
+  metric:
+    exclude_paths:
+      - "**_test.go"
+      - "testing/**"  # Not covered as for test purpose only
+      - "testing/**/*"  # Not covered as for test purpose only
+  duplication:
+    exclude_paths:
+      - "**_test.go"
+      - "testing/**"  # Not covered as for test purpose only
+      - "testing/**/*"  # Not covered as for test purpose only
+exclude_paths:
+  - "testing/**"  # Not covered as for test purpose only
+  - "testing/**/*"  # Not covered as for test purpose only
+  - "DOC.md" # Auto-generated doc
+  - "composer/README.md" # Auto-generated doc
+  - "contract/README.md" # Auto-generated doc
+  - "testing/README.md" # Auto-generated doc
