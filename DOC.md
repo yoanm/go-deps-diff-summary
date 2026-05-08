@@ -2,7 +2,7 @@
 
 ## Functions
 
-### func [GenerateForChanges](/main.go#L17)
+### func [GenerateForChanges](/main.go#L18)
 
 `func GenerateForChanges(changes contract.DiffMap) string`
 
