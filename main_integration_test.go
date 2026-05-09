@@ -43,12 +43,12 @@ func TestIntegration_GenerateForChanges(t *testing.T) {
 
 			expected, err := os.ReadFile(testCase.goldenFile)
 			if err != nil {
-				t.Errorf("Diff() error while reading previous lock file = %v", err)
+				t.Errorf("Diff() error while reading golden file = %v", err)
 
 				return
 			}
 
-			current := summary.GenerateForChanges(testCase.changes)
+			current := summary.GenerateForChanges(testCase.changes, "MyManager")
 
 			if string(expected) != current {
 				t.Errorf("unexpected output: diff %s", diff.LineDiff(string(expected), current))

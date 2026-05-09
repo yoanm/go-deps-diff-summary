@@ -1,4 +1,7 @@
 
+# 🔎 MyManager packages 🔍
+
+
 ## Hazardous changes<br/><sub><sup>☣️ Changes that are unlikely expected and/or likely to cause trouble</sub></sup>
 
 

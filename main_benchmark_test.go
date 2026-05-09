@@ -18,7 +18,7 @@ func BenchmarkGenerateForChanges(b *testing.B) {
 			slog.SetLogLoggerLevel(slog.LevelDebug)
 			log.SetOutput(io.Discard) // But drop output to avoid parsing issues later
 
-			_ = summary.GenerateForChanges(_integrationFullChanges)
+			_ = summary.GenerateForChanges(_integrationFullChanges, "MyManager")
 		}
 	})
 }
