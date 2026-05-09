@@ -50,8 +50,6 @@ func TestIntegration_GenerateForChanges(t *testing.T) {
 
 			current := summary.GenerateForChanges(testCase.changes, "MyManager")
 
-			// fmt.Println("EXPECTED:" + string(expected))
-
 			if string(expected) != current {
 				t.Errorf("unexpected output: diff %s", diff.LineDiff(string(expected), current))
 			}
