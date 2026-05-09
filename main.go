@@ -15,12 +15,13 @@ const (
 	categoryHeaderLevel = 3
 )
 
-func GenerateForChanges(changes contract.DiffMap) string {
-	mrkMap := buildSectionsMap(changes)
+func GenerateForChanges(changes contract.DiffMap, managerName string) string {
 	builder := markdown.NewBuilder()
 
+	builder.Header(fmt.Sprintf("🔎 %s packages 🔍", managerName), 1, 0)
+
 	inOrderMapIteratorHelper[markdownSection, categoriesMap](
-		mrkMap,
+		buildSectionsMap(changes),
 		getSectionsOrder(),
 		func(sectionName markdownSection, categoriesMap categoriesMap) {
 			processSection(builder, categoriesMap, sectionName)
