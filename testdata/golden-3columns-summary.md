@@ -35,7 +35,7 @@
 <details open>
   <summary>➕️<sup>1</sup></summary>
   <table>
-    <tr><td align="left"><sup>🔗</sup><a href="http://www.squizlabs.com/php-codesniffer">warning-prod_usage-transitive/ADDITION+ABANDONED</a>💀</td><td align="center">➕️</td><td align="right">1.18.4</td></tr>
+    <tr><td align="left"><sup>🔗️</sup><a href="http://www.squizlabs.com/php-codesniffer">warning-prod_usage-transitive/ADDITION+ABANDONED</a>💀</td><td align="center">➕️</td><td align="right">1.18.4</td></tr>
   </table>
 
 </details>
@@ -45,7 +45,7 @@
 <details>
   <summary>➕️<sup>1</sup></summary>
   <table>
-    <tr><td align="left"><sup>🔗</sup><a href="http://www.squizlabs.com/php-codesniffer">warning-dev_only_usage-transitive/ADDITION+ABANDONED</a>💀</td><td align="center">➕️</td><td align="right">1.18.4</td></tr>
+    <tr><td align="left"><sup>🔗️</sup><a href="http://www.squizlabs.com/php-codesniffer">warning-dev_only_usage-transitive/ADDITION+ABANDONED</a>💀</td><td align="center">➕️</td><td align="right">1.18.4</td></tr>
   </table>
 
 </details>
@@ -89,8 +89,8 @@
   <table>
     <tr><td align="left"><sup>🧰</sup><a href="http://www.squizlabs.com/php-codesniffer">tip-prod_usage-requirement+dev_req/ADDITION</a></td><td align="center">➕️</td><td align="right">1.18.4</td></tr>
     <tr><td align="left"><sup>🗄️</sup><a href="http://www.squizlabs.com/php-codesniffer">tip-prod_usage-requirement/ADDITION</a></td><td align="center">➕️</td><td align="right">1.18.4</td></tr>
-    <tr><td align="left"><sup>🔗</sup><a href="http://www.squizlabs.com/php-codesniffer">tip-prod_usage-transitive/REMOVAL</a></td><td align="right">3.0.1</td><td align="center">❌</td></tr>
-    <tr><td align="left"><sup>🔗</sup><a href="http://www.squizlabs.com/php-codesniffer">tip-prod_usage-transitive/REMOVAL+ABANDONED</a>💀</td><td align="right">3.2.1</td><td align="center">❌</td></tr>
+    <tr><td align="left"><sup>🔗️</sup><a href="http://www.squizlabs.com/php-codesniffer">tip-prod_usage-transitive/REMOVAL</a></td><td align="right">3.0.1</td><td align="center">❌</td></tr>
+    <tr><td align="left"><sup>🔗️</sup><a href="http://www.squizlabs.com/php-codesniffer">tip-prod_usage-transitive/REMOVAL+ABANDONED</a>💀</td><td align="right">3.2.1</td><td align="center">❌</td></tr>
   </table>
 
 </details>
@@ -101,8 +101,8 @@
   <summary>❌<sup>2</sup>    ➕️<sup>1</sup></summary>
   <table>
     <tr><td align="left"><sup>🧰</sup><a href="http://www.squizlabs.com/php-codesniffer">tip-dev_only_usage-requirement/ADDITION</a></td><td align="center">➕️</td><td align="right">3.0.1</td></tr>
-    <tr><td align="left"><sup>🔗</sup><a href="http://www.squizlabs.com/php-codesniffer">tip-dev_only_usage-transitive/REMOVAL</a></td><td align="right">3.0.1</td><td align="center">❌</td></tr>
-    <tr><td align="left"><sup>🔗</sup><a href="http://www.squizlabs.com/php-codesniffer">tip-dev_only_usage-transitive/REMOVAL+ABANDONED</a>💀</td><td align="right">3.2.1</td><td align="center">❌</td></tr>
+    <tr><td align="left"><sup>🔗️</sup><a href="http://www.squizlabs.com/php-codesniffer">tip-dev_only_usage-transitive/REMOVAL</a></td><td align="right">3.0.1</td><td align="center">❌</td></tr>
+    <tr><td align="left"><sup>🔗️</sup><a href="http://www.squizlabs.com/php-codesniffer">tip-dev_only_usage-transitive/REMOVAL+ABANDONED</a>💀</td><td align="right">3.2.1</td><td align="center">❌</td></tr>
   </table>
 
 </details>
@@ -116,7 +116,7 @@
 <details>
   <summary>➕️<sup>1</sup>    🟰<sup>1</sup></summary>
   <table>
-    <tr><td align="left"><sup>🔗</sup><a href="http://www.squizlabs.com/php-codesniffer">note-prod_usage-transitive/ADDITION</a></td><td align="center">➕️</td><td align="right">1.18.4</td></tr>
+    <tr><td align="left"><sup>🔗️</sup><a href="http://www.squizlabs.com/php-codesniffer">note-prod_usage-transitive/ADDITION</a></td><td align="center">➕️</td><td align="right">1.18.4</td></tr>
   </table>
 
   <details>
@@ -133,7 +133,7 @@
 <details>
   <summary>➕️<sup>1</sup>    🟰<sup>1</sup></summary>
   <table>
-    <tr><td align="left"><sup>🔗</sup><a href="http://www.squizlabs.com/php-codesniffer">note-dev_only_usage-transitive/ADDITION</a></td><td align="center">➕️</td><td align="right">1.18.4</td></tr>
+    <tr><td align="left"><sup>🔗️</sup><a href="http://www.squizlabs.com/php-codesniffer">note-dev_only_usage-transitive/ADDITION</a></td><td align="center">➕️</td><td align="right">1.18.4</td></tr>
   </table>
 
   <details>
@@ -178,7 +178,7 @@
   #### Package types
 
   <table>
-    <tr><td align="center">🗄</td><td align="left">Package is explicitly required for production usage</td></tr>
+    <tr><td align="center">🗄️</td><td align="left">Package is explicitly required for production usage</td></tr>
     <tr><td align="center">🧰</td><td align="left">Package is explicitly required for dev-only usage</td></tr>
     <tr><td align="center">🔗️</td><td align="left">Transitive dependency package</td></tr>
     <tr><td align="center">💀</td><td align="left">Package is declared abandoned.<br/>You should replace it.</td></tr>

@@ -6,9 +6,7 @@ import (
 	"github.com/yoanm/go-deps-diff/contract"
 )
 
-const AbandonedSymbol = "💀"
-
-func BuildPackageLabel(pkg contract.PkgWrapper) string {
+func buildPackageLabel(pkg contract.PkgWrapper) string {
 	builder := strings.Builder{}
 	// Prepend package type symbol
 	builder.WriteString("<sup>" + GetPackageSymbol(pkg) + "</sup>")
@@ -20,7 +18,7 @@ func BuildPackageLabel(pkg contract.PkgWrapper) string {
 	}
 	// Managed abandoned package special case
 	if pkg.IsAbandoned() {
-		builder.WriteString("💀")
+		builder.WriteString(AbandonedSymbol)
 	}
 
 	return builder.String()
@@ -28,7 +26,7 @@ func BuildPackageLabel(pkg contract.PkgWrapper) string {
 
 func BuildVersionLabel(version contract.PkgVersion) string {
 	if version.Semver == nil {
-		return version.Label + "❗"
+		return version.Label + NonSemverSymbol
 	}
 
 	return version.Label

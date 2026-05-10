@@ -35,7 +35,7 @@
 <details open>
   <summary><sub><sup>🔹.🔹.🔹❓</sup></sub><sup>1</sup></summary>
   <table>
-    <tr><td align="left"><sup>🔗</sup><a href="http://www.squizlabs.com/php-codesniffer">warning-prod_usage-transitive/UNKNOWN_UPDATE+SEMVER_EXTRA</a></td><td align="right">2.9.2+alpha</td><td align="center"><sub><sup>🔹.🔹.🔹❓</sup></sub></td><td align="right">2.9.2+beta</td></tr>
+    <tr><td align="left"><sup>🔗️</sup><a href="http://www.squizlabs.com/php-codesniffer">warning-prod_usage-transitive/UNKNOWN_UPDATE+SEMVER_EXTRA</a></td><td align="right">2.9.2+alpha</td><td align="center"><sub><sup>🔹.🔹.🔹❓</sup></sub></td><td align="right">2.9.2+beta</td></tr>
   </table>
 
 </details>
@@ -45,7 +45,7 @@
 <details>
   <summary><sub><sup>🔹.🔹.🔹❓</sup></sub><sup>1</sup></summary>
   <table>
-    <tr><td align="left"><sup>🔗</sup><a href="http://www.squizlabs.com/php-codesniffer">warning-dev_only_usage-transitive/UNKNOWN_UPDATE+SEMVER_EXTRA</a></td><td align="right">2.9.2+alpha</td><td align="center"><sub><sup>🔹.🔹.🔹❓</sup></sub></td><td align="right">2.9.2+beta</td></tr>
+    <tr><td align="left"><sup>🔗️</sup><a href="http://www.squizlabs.com/php-codesniffer">warning-dev_only_usage-transitive/UNKNOWN_UPDATE+SEMVER_EXTRA</a></td><td align="right">2.9.2+alpha</td><td align="center"><sub><sup>🔹.🔹.🔹❓</sup></sub></td><td align="right">2.9.2+beta</td></tr>
   </table>
 
 </details>
@@ -76,7 +76,7 @@
   #### Package types
 
   <table>
-    <tr><td align="center">🗄</td><td align="left">Package is explicitly required for production usage</td></tr>
+    <tr><td align="center">🗄️</td><td align="left">Package is explicitly required for production usage</td></tr>
     <tr><td align="center">🧰</td><td align="left">Package is explicitly required for dev-only usage</td></tr>
     <tr><td align="center">🔗️</td><td align="left">Transitive dependency package</td></tr>
     <tr><td align="center">💀</td><td align="left">Package is declared abandoned. You should replace it.</td></tr>

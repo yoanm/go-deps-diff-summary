@@ -177,5 +177,5 @@ func buildPackageVersionHTMLCell(version contract.PkgVersion) string {
 }
 
 func buildPackageNameHTMLCell(pkg contract.PkgWrapper) string {
-	return "<td align=\"left\">" + BuildPackageLabel(pkg) + "</td>"
+	return "<td align=\"left\">" + buildPackageLabel(pkg) + "</td>"
 }
