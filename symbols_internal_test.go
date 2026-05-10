@@ -35,7 +35,7 @@ func Test_getOperationSymbol(t *testing.T) {
 		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
 
-			current := getOperationSymbol(testCase.operation)
+			current := GetOperationSymbol(testCase.operation)
 
 			if testCase.expected != current {
 				t.Errorf("unexpected output: got %s, want %s", current, testCase.expected)

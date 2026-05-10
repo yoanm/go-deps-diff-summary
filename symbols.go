@@ -2,7 +2,7 @@ package summary
 
 import "github.com/yoanm/go-deps-diff/contract"
 
-func getPackageSymbol(pkg contract.PkgWrapper) string {
+func GetPackageSymbol(pkg contract.PkgWrapper) string {
 	switch {
 	case pkg.IsRootRequirement():
 		return "🗄️"
@@ -13,7 +13,7 @@ func getPackageSymbol(pkg contract.PkgWrapper) string {
 	}
 }
 
-func getOperationSymbol(operation contract.Operation) string {
+func GetOperationSymbol(operation contract.Operation) string {
 	switch operation.Name {
 	case contract.UnknownUpdateOperation:
 		if operation.SemverType == contract.SemverExtraUpdate {
