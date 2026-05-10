@@ -6,6 +6,8 @@ import (
 	"github.com/yoanm/go-deps-diff/contract"
 )
 
+const AbandonedSymbol = "💀"
+
 func BuildPackageLabel(pkg contract.PkgWrapper) string {
 	builder := strings.Builder{}
 	// Prepend package type symbol
