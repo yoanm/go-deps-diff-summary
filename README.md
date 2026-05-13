@@ -1,4 +1,20 @@
-# go-deps-diff-summary
+# summary<br/><sup><sub>`depsdiff` summary library</sub></sup>
+
+[![License](https://img.shields.io/github/license/yoanm/go-deps-diff-summary.svg)](https://github.com/yoanm/go-deps-diff-summary)
+[![Code size](https://img.shields.io/github/languages/code-size/yoanm/go-deps-diff-summary.svg)](https://github.com/yoanm/go-deps-diff-summary)
+[![Go Reference](https://pkg.go.dev/badge/github.com/yoanm/go-deps-diff-summary.svg)](https://pkg.go.dev/github.com/yoanm/go-deps-diff-summary)
+
+![Dependabot Status](https://flat.badgen.net/github/dependabot/yoanm/go-deps-diff-summary)
+![Last commit](https://badgen.net/github/last-commit/yoanm/go-deps-diff-summary)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ebeacd3a91a74fef8a8ed4ea879ede72)](https://app.codacy.com/gh/yoanm/go-deps-diff-summary/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Go Report Card](https://goreportcard.com/badge/github.com/yoanm/go-deps-diff-summary?)](https://goreportcard.com/report/github.com/yoanm/go-deps-diff-summary)
+
+[![CI](https://github.com/yoanm/go-deps-diff-summary/actions/workflows/CI.yml/badge.svg?branch=master)](https://github.com/yoanm/go-deps-diff-summary/actions/workflows/CI.yml)
+[![codecov](https://codecov.io/gh/yoanm/go-deps-diff-summary/branch/master/graph/badge.svg?token=NHdwEBUFK5)](https://codecov.io/gh/yoanm/go-deps-diff-summary)
+
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/yoanm/go-deps-diff-summary)
+
 
 A Go library for generating human-readable Markdown summaries of dependency changes detected by the [go-deps-diff](https://github.com/yoanm/go-deps-diff) library.
 
