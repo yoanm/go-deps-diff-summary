@@ -1,10 +1,40 @@
 # summary
 
+## Constants
+
+```golang
+const (
+    AbandonedSymbol = "💀"
+    NonSemverSymbol = "❗"
+)
+```
+
+```golang
+const (
+    RootRequirementSymbol      = "🗄️"
+    RootDevRequirementSymbol   = "🧰"
+    TransitiveDependencySymbol = "🔗️"
+)
+```
+
+```golang
+const (
+    SemverComponentUpgradeSymbol     = "🔺"
+    SemverComponentDowngradeSymbol   = "🔻"
+    SemverComponentSymbol            = "🔹"
+    UnknownOperationSymbol           = "❓"
+    SemverExtraUpdateOperationSymbol = SemverComponentSymbol +
+        "." + SemverComponentSymbol +
+        "." + SemverComponentSymbol +
+        UnknownOperationSymbol
+    RemovalOperationSymbol   = "❌"
+    AdditionOperationSymbol  = "➕️"
+    NonChangeOperationSymbol = "🟰"
+    UnmanagedSymbol          = "❔"
+)
+```
+
 ## Functions
-
-### func [BuildPackageLabel](/labels.go#L9)
-
-`func BuildPackageLabel(pkg contract.PkgWrapper) string`
 
 ### func [BuildVersionLabel](/labels.go#L27)
 
@@ -14,11 +44,11 @@
 
 `func GenerateForChanges(changes contract.DiffMap, managerName string) string`
 
-### func [GetOperationSymbol](/symbols.go#L16)
+### func [GetOperationSymbol](/symbols.go#L42)
 
 `func GetOperationSymbol(operation contract.Operation) string`
 
-### func [GetPackageSymbol](/symbols.go#L5)
+### func [GetPackageSymbol](/symbols.go#L31)
 
 `func GetPackageSymbol(pkg contract.PkgWrapper) string`
 
