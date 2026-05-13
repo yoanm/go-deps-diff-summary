@@ -24,6 +24,23 @@ func buildPackageLabel(pkg contract.PkgWrapper) string {
 	return builder.String()
 }
 
+// BuildVersionLabel formats a package version into a display label.
+// If the version is not semantic, it appends a NonSemverSymbol (❗) indicator.
+//
+// Parameters:
+//   - version: The package version to format
+//
+// Returns:
+// A formatted string representation of the version, potentially with a symbol appended
+// to indicate non-semantic versioning (e.g., git hashes, custom versions).
+//
+// Example:
+//
+//	label := BuildVersionLabel(contract.PkgVersion{
+//		Label: "1.2.3",
+//		Semver: &contract.Semver{...},
+//	})
+//	fmt.Println(label) // Output: 1.2.3
 func BuildVersionLabel(version contract.PkgVersion) string {
 	if version.Semver == nil {
 		return version.Label + NonSemverSymbol

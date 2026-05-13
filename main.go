@@ -1,3 +1,28 @@
+// Package summary generates human-readable Markdown summaries of dependency changes.
+//
+// It transforms dependency diff data from the go-deps-diff library into organized,
+// categorized Markdown output with visual indicators for package relationships and
+// change types. The output includes collapsible sections, Unicode symbols for quick
+// visual scanning, and semantic version tracking.
+//
+// The GenerateForChanges function is the primary API. It accepts a DiffMap from
+// go-deps-diff and produces a Markdown string ready for display, documentation,
+// or file storage.
+//
+// Example:
+//
+//	changes, err := difflib.Diff(oldPkgs, newPkgs)
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//	markdown := summary.GenerateForChanges(changes, "Composer")
+//	fmt.Println(markdown)
+//
+// Helper Functions:
+//
+// - BuildVersionLabel: Formats versions with semantic version indicators
+// - GetPackageSymbol: Returns symbols indicating package type/relationship
+// - GetOperationSymbol: Returns symbols for change operations
 package summary
 
 import (
@@ -15,6 +40,27 @@ const (
 	categoryHeaderLevel = 3
 )
 
+// GenerateForChanges produces a Markdown-formatted summary of package dependency changes.
+// It takes a DiffMap containing package changes and organizes them into categorized sections
+// with appropriate symbols and formatting. The managerName parameter (e.g., "Composer" or "Npm")
+// is used in the header to identify the package manager context.
+//
+// Parameters:
+//   - changes: A contract.DiffMap from go-deps-diff containing all package changes to summarize
+//   - managerName: The name of the package manager (e.g., "Composer", "Npm") for header formatting
+//
+// Returns:
+// A Markdown-formatted string with sections for additions, removals, updates, and unchanged packages.
+// Changes are visually distinguished using Unicode symbols and organized in collapsible detail sections.
+//
+// Example:
+//
+//	changes, err := difflib.Diff(oldPkgs, newPkgs)
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//	markdown := GenerateForChanges(changes, "Composer")
+//	fmt.Println(markdown)
 func GenerateForChanges(changes contract.DiffMap, managerName string) string {
 	builder := markdown.NewBuilder()
 
