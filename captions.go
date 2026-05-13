@@ -21,41 +21,83 @@ var (
 	//nolint:gochecknoglobals // Just to avoid multiple creation at runtime
 	versionHelpList = simpleSymbolHelpList{
 		{
-			symbol:  "<td align=\"center\">_VERSION_❗</td>",
+			symbol:  "<td align=\"center\">_VERSION_" + NonSemverSymbol + "</td>",
 			message: "<td align=\"left\">Version is not semver compliant.<br/>Usually a commit ref or branch.</td>",
 		},
 	}
 	//nolint:gochecknoglobals // Just to avoid multiple creation at runtime
 	operationHelpList = simpleSymbolHelpList{
-		{symbol: "<td align=\"center\">❓</td>", message: "<td align=\"left\">Unknown update</td>"},
-		{symbol: "<td align=\"center\">❌</td>", message: "<td align=\"left\">Removed package</td>"},
-		{symbol: "<td align=\"center\">➕️</td>", message: "<td align=\"left\">Added package</td>"},
-		{symbol: "<td align=\"center\">🟰</td>", message: "<td align=\"left\">No change</td>"},
-		{symbol: "<td align=\"center\"><sub><sup>🔺.🔹.🔹</sup></sub></td>", message: "<td align=\"left\">Major upgrade</td>"},
-		{symbol: "<td align=\"center\"><sub><sup>🔻.🔹.🔹</sup></sub></td>", message: "<td align=\"left\">Major downgrade</td>"},
-		{symbol: "<td align=\"center\"><sub><sup>🔹.🔺.🔹</sup></sub></td>", message: "<td align=\"left\">Minor upgrade</td>"},
-		{symbol: "<td align=\"center\"><sub><sup>🔹.🔻.🔹</sup></sub></td>", message: "<td align=\"left\">Minor downgrade</td>"},
-		{symbol: "<td align=\"center\"><sub><sup>🔹.🔹.🔺</sup></sub></td>", message: "<td align=\"left\">Patch upgrade</td>"},
-		{symbol: "<td align=\"center\"><sub><sup>🔹.🔹.🔻</sup></sub></td>", message: "<td align=\"left\">Patch downgrade</td>"},
 		{
-			symbol:  "<td align=\"center\"><sub><sup>🔹.🔹.🔹❓</sup></sub></td>",
+			symbol:  "<td align=\"center\">" + UnknownOperationSymbol + "</td>",
+			message: "<td align=\"left\">Unknown update</td>",
+		},
+		{
+			symbol:  "<td align=\"center\">" + RemovalOperationSymbol + "</td>",
+			message: "<td align=\"left\">Removed package</td>",
+		},
+		{
+			symbol:  "<td align=\"center\">" + AdditionOperationSymbol + "</td>",
+			message: "<td align=\"left\">Added package</td>",
+		},
+		{
+			symbol:  "<td align=\"center\">" + NonChangeOperationSymbol + "</td>",
+			message: "<td align=\"left\">No change</td>",
+		},
+		{
+			symbol: "<td align=\"center\"><sub><sup>" + SemverComponentUpgradeSymbol + "." + SemverComponentSymbol +
+				"." + SemverComponentSymbol + "</sup></sub></td>",
+			message: "<td align=\"left\">Major upgrade</td>",
+		},
+		{
+			symbol: "<td align=\"center\"><sub><sup>" + SemverComponentDowngradeSymbol + "." + SemverComponentSymbol +
+				"." + SemverComponentSymbol + "</sup></sub></td>",
+			message: "<td align=\"left\">Major downgrade</td>",
+		},
+		{
+			symbol: "<td align=\"center\"><sub><sup>" + SemverComponentSymbol + "." + SemverComponentUpgradeSymbol +
+				"." + SemverComponentSymbol + "</sup></sub></td>",
+			message: "<td align=\"left\">Minor upgrade</td>",
+		},
+		{
+			symbol: "<td align=\"center\"><sub><sup>" + SemverComponentSymbol + "." + SemverComponentDowngradeSymbol +
+				"." + SemverComponentSymbol + "</sup></sub></td>",
+			message: "<td align=\"left\">Minor downgrade</td>",
+		},
+		{
+			symbol: "<td align=\"center\"><sub><sup>" + SemverComponentSymbol + "." + SemverComponentSymbol +
+				"." + SemverComponentUpgradeSymbol + "</sup></sub></td>",
+			message: "<td align=\"left\">Patch upgrade</td>",
+		},
+		{
+			symbol: "<td align=\"center\"><sub><sup>" + SemverComponentSymbol + "." + SemverComponentSymbol +
+				"." + SemverComponentDowngradeSymbol + "</sup></sub></td>",
+			message: "<td align=\"left\">Patch downgrade</td>",
+		},
+		{
+			symbol:  "<td align=\"center\"><sub><sup>" + SemverExtraUpdateOperationSymbol + "</sup></sub></td>",
 			message: "<td align=\"left\">Extra updated, considered as Unknown update</td>",
 		},
-		{symbol: "<td align=\"center\">❔</td>", message: "<td align=\"left\">Unmanaged operation</td>"},
+		{
+			symbol:  "<td align=\"center\">" + UnmanagedSymbol + "</td>",
+			message: "<td align=\"left\">Unmanaged operation</td>",
+		},
 	}
 	//nolint:gochecknoglobals // Just to avoid multiple creation at runtime
 	pkgTypeHelpList = simpleSymbolHelpList{
 		{
-			symbol:  "<td align=\"center\">🗄</td>",
+			symbol:  "<td align=\"center\">" + RootRequirementSymbol + "</td>",
 			message: "<td align=\"left\">Package is explicitly required for production usage</td>",
 		},
 		{
-			symbol:  "<td align=\"center\">🧰</td>",
+			symbol:  "<td align=\"center\">" + RootDevRequirementSymbol + "</td>",
 			message: "<td align=\"left\">Package is explicitly required for dev-only usage</td>",
 		},
-		{symbol: "<td align=\"center\">🔗️</td>", message: "<td align=\"left\">Transitive dependency package</td>"},
 		{
-			symbol:  "<td align=\"center\">💀</td>",
+			symbol:  "<td align=\"center\">" + TransitiveDependencySymbol + "</td>",
+			message: "<td align=\"left\">Transitive dependency package</td>",
+		},
+		{
+			symbol:  "<td align=\"center\">" + AbandonedSymbol + "</td>",
 			message: "<td align=\"left\">Package is declared abandoned.<br/>You should replace it.</td>",
 		},
 	}

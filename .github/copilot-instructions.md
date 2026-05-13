@@ -9,7 +9,8 @@ This file provides context for AI assistants working in this Go library project.
 
 ## Project Overview
 
-**deps-diff-summary** is a Go library module (module: `summary`) for comparing PHP Composer lock files. See README.md and SPECIFICATION.md for full details.
+**deps-diff-summary** is a Go library module (module: `summary`) for building a change summary based on the differences between two sets of Go package dependencies. It provides functionality to analyze and summarize changes in dependencies.
+Differences come from the `Diff` function of the `depsdiff` module, which compares two package maps and returns a diff map. The summary module then processes this diff map to generate a human-readable summary of changes (Markdown style)
 
 ## Build, Test, and Lint
 

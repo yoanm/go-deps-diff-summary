@@ -169,29 +169,13 @@ func buildOperationHTMLCell(operation contract.Operation, colspan int) string {
 		opColspanDirective = fmt.Sprintf(" colspan=\"%d\"", colspan)
 	}
 
-	return "<td align=\"center\"" + opColspanDirective + ">" + getOperationSymbol(operation) + "</td>"
+	return "<td align=\"center\"" + opColspanDirective + ">" + GetOperationSymbol(operation) + "</td>"
 }
 
 func buildPackageVersionHTMLCell(version contract.PkgVersion) string {
-	label := version.Label
-	if version.Semver == nil {
-		label += "❗"
-	}
-
-	return "<td align=\"right\">" + label + "</td>"
+	return "<td align=\"right\">" + BuildVersionLabel(version) + "</td>"
 }
 
 func buildPackageNameHTMLCell(pkg contract.PkgWrapper) string {
-	pkgTitle := pkg.GetName()
-	if pkg.GetLink() != "" {
-		pkgTitle = "<a href=\"" + pkg.GetLink() + "\">" + pkgTitle + "</a>"
-	}
-	// Prepend package type symbol
-	pkgTitle = "<sup>" + getPackageSymbol(pkg) + "</sup>" + pkgTitle
-	// Append abandoned symbol
-	if pkg.IsAbandoned() {
-		pkgTitle += "💀"
-	}
-
-	return "<td align=\"left\">" + pkgTitle + "</td>"
+	return "<td align=\"left\">" + buildPackageLabel(pkg) + "</td>"
 }

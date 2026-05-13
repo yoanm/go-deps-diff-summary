@@ -2,54 +2,80 @@ package summary
 
 import "github.com/yoanm/go-deps-diff/contract"
 
-func getPackageSymbol(pkg contract.PkgWrapper) string {
+const (
+	AbandonedSymbol = "💀"
+	NonSemverSymbol = "❗"
+)
+
+const (
+	RootRequirementSymbol      = "🗄️"
+	RootDevRequirementSymbol   = "🧰"
+	TransitiveDependencySymbol = "🔗️"
+)
+
+const (
+	SemverComponentUpgradeSymbol     = "🔺"
+	SemverComponentDowngradeSymbol   = "🔻"
+	SemverComponentSymbol            = "🔹"
+	UnknownOperationSymbol           = "❓"
+	SemverExtraUpdateOperationSymbol = SemverComponentSymbol +
+		"." + SemverComponentSymbol +
+		"." + SemverComponentSymbol +
+		UnknownOperationSymbol
+	RemovalOperationSymbol   = "❌"
+	AdditionOperationSymbol  = "➕️"
+	NonChangeOperationSymbol = "🟰"
+	UnmanagedSymbol          = "❔"
+)
+
+func GetPackageSymbol(pkg contract.PkgWrapper) string {
 	switch {
 	case pkg.IsRootRequirement():
-		return "🗄️"
+		return RootRequirementSymbol
 	case pkg.IsRootDevRequirement():
-		return "🧰"
+		return RootDevRequirementSymbol
 	default:
-		return "🔗"
+		return TransitiveDependencySymbol
 	}
 }
 
-func getOperationSymbol(operation contract.Operation) string {
+func GetOperationSymbol(operation contract.Operation) string {
 	switch operation.Name {
 	case contract.UnknownUpdateOperation:
 		if operation.SemverType == contract.SemverExtraUpdate {
-			return "<sub><sup>🔹.🔹.🔹❓</sup></sub>"
+			return "<sub><sup>" + SemverExtraUpdateOperationSymbol + "</sup></sub>"
 		}
 
-		return "❓"
+		return UnknownOperationSymbol
 	case contract.UpgradeOperation:
 		return getUpdateOperationSymbol(operation, false)
 	case contract.DowngradeOperation:
 		return getUpdateOperationSymbol(operation, true)
 	case contract.RemovalOperation:
-		return "❌"
+		return RemovalOperationSymbol
 	case contract.AdditionOperation:
-		return "➕️"
+		return AdditionOperationSymbol
 	case contract.NoChangeOperation:
-		return "🟰"
+		return NonChangeOperationSymbol
 	}
 
-	return "❔"
+	return UnmanagedSymbol
 }
 
 func getUpdateOperationSymbol(operation contract.Operation, isDowngrade bool) string {
-	emojiUpdated := "🔺"
+	emojiUpdated := SemverComponentUpgradeSymbol
 	if isDowngrade {
-		emojiUpdated = "🔻"
+		emojiUpdated = SemverComponentDowngradeSymbol
 	}
 
 	switch operation.SemverType { //nolint:exhaustive // Only those cases can be managed, fallback to unknown otherwise
 	case contract.SemverMajorUpdate:
-		return "<sub><sup>" + emojiUpdated + ".🔹.🔹</sup></sub>"
+		return "<sub><sup>" + emojiUpdated + "." + SemverComponentSymbol + "." + SemverComponentSymbol + "</sup></sub>"
 	case contract.SemverMinorUpdate:
-		return "<sub><sup>🔹." + emojiUpdated + ".🔹</sup></sub>"
+		return "<sub><sup>" + SemverComponentSymbol + "." + emojiUpdated + "." + SemverComponentSymbol + "</sup></sub>"
 	case contract.SemverPatchUpdate:
-		return "<sub><sup>🔹.🔹." + emojiUpdated + "</sup></sub>"
+		return "<sub><sup>" + SemverComponentSymbol + "." + SemverComponentSymbol + "." + emojiUpdated + "</sup></sub>"
 	}
 
-	return "❔"
+	return UnmanagedSymbol
 }
