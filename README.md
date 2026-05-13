@@ -44,7 +44,7 @@ func main() {
     }
     
     // Generate Markdown summary
-    markdown := summary.GenerateForChanges(changes, "Go")
+    markdown := summary.GenerateForChanges(changes, "Composer")
     
     // Output or save the markdown
     fmt.Println(markdown)
@@ -81,14 +81,14 @@ Generates a Markdown summary of package changes.
 
 **Parameters:**
 - `changes`: A `contract.DiffMap` containing package changes from go-deps-diff
-- `managerName`: Name of the package manager (e.g., "Go", "Rust") used in headers
+- `managerName`: Name of the package manager (e.g., "Composer", "Npm") used in headers
 
 **Returns:**
 - `string`: Formatted Markdown summary with organized sections and symbols
 
 **Example:**
 ```go
-markdown := summary.GenerateForChanges(changes, "Go")
+markdown := summary.GenerateForChanges(changes, "Composer")
 fmt.Println(markdown)
 ```
 
@@ -180,7 +180,7 @@ if err != nil {
 }
 
 // Generate summary
-markdown := summary.GenerateForChanges(changes, "Go")
+markdown := summary.GenerateForChanges(changes, "Composer")
 
 // Save to file
 err = os.WriteFile("dependency-changes.md", []byte(markdown), 0644)

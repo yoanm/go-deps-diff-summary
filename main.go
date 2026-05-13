@@ -5,8 +5,6 @@
 // change types. The output includes collapsible sections, Unicode symbols for quick
 // visual scanning, and semantic version tracking.
 //
-// Main Entry Point:
-//
 // The GenerateForChanges function is the primary API. It accepts a DiffMap from
 // go-deps-diff and produces a Markdown string ready for display, documentation,
 // or file storage.
@@ -17,7 +15,7 @@
 //	if err != nil {
 //		log.Fatal(err)
 //	}
-//	markdown := summary.GenerateForChanges(changes, "Go")
+//	markdown := summary.GenerateForChanges(changes, "Composer")
 //	fmt.Println(markdown)
 //
 // Helper Functions:
@@ -25,8 +23,6 @@
 // - BuildVersionLabel: Formats versions with semantic version indicators
 // - GetPackageSymbol: Returns symbols indicating package type/relationship
 // - GetOperationSymbol: Returns symbols for change operations
-//
-// For more information, see: https://github.com/yoanm/go-deps-diff-summary
 package summary
 
 import (
@@ -46,12 +42,12 @@ const (
 
 // GenerateForChanges produces a Markdown-formatted summary of package dependency changes.
 // It takes a DiffMap containing package changes and organizes them into categorized sections
-// with appropriate symbols and formatting. The managerName parameter (e.g., "Go" or "Rust")
+// with appropriate symbols and formatting. The managerName parameter (e.g., "Composer" or "Npm")
 // is used in the header to identify the package manager context.
 //
 // Parameters:
 //   - changes: A contract.DiffMap from go-deps-diff containing all package changes to summarize
-//   - managerName: The name of the package manager (e.g., "Go", "Rust") for header formatting
+//   - managerName: The name of the package manager (e.g., "Composer", "Npm") for header formatting
 //
 // Returns:
 // A Markdown-formatted string with sections for additions, removals, updates, and unchanged packages.
@@ -63,7 +59,7 @@ const (
 //	if err != nil {
 //		log.Fatal(err)
 //	}
-//	markdown := GenerateForChanges(changes, "Go")
+//	markdown := GenerateForChanges(changes, "Composer")
 //	fmt.Println(markdown)
 func GenerateForChanges(changes contract.DiffMap, managerName string) string {
 	builder := markdown.NewBuilder()
