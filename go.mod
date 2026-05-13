@@ -1,6 +1,8 @@
 module github.com/yoanm/go-deps-diff-summary
 
-go 1.26.2
+go 1.26
+
+toolchain go1.26.3
 
 tool github.com/andreyvit/diff
 
