@@ -178,7 +178,7 @@ If an error occurs during string concatenation (very rare with strings.Builder).
 `func (c *Builder) WriteEol()`
 
 WriteEol writes an end-of-line marker without any indentation.
-This appends a newline to the output
+This appends a newline to the output.
 
 #### func (*Builder) [WriteLine](./builder.go#L27)
 

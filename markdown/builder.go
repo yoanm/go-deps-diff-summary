@@ -31,7 +31,7 @@ func (c *Builder) WriteLine(line string, indentDepth int) {
 }
 
 // WriteEol writes an end-of-line marker without any indentation.
-// This appends a newline to the output
+// This appends a newline to the output.
 func (c *Builder) WriteEol() {
 	c.Write(c.eolString)
 }
