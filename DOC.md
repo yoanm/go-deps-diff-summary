@@ -54,8 +54,6 @@ const (
 
 ## Sub Packages
 
-* [.tools](./.tools)
-
 * [markdown](./markdown)
 
 ---
